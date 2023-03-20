@@ -8,9 +8,11 @@ const priceFull = 0.21; // prezzo unitario per km
 
 //const priceExample = Math.round(0.3654 * 100) / 100; //arrotonda il numero moltiplicato per 100 cosìcche dividendolo in seguito per 100 sarà arrotondato al centesimo
 
-const priceUnderAge = Math.round(((priceFull - ((priceFull * 20) / 100)) + Number.EPSILON)*100) / 100;// calcola il prezzo scontato del 20% per minorenni senza arrotondare
+//const priceUnderAge = Math.round(((priceFull - ((priceFull * 20) / 100)) + Number.EPSILON)*100) / 100;
 
-const priceOverAge = Math.round(((priceFull - ((priceFull * 40) / 100)) + Number.EPSILON)*100) / 100; // calcola il prezzo scontato del 40% per ultrea sessantacinquenni senza arrotondare
+const priceUnderAge = (priceFull - ((priceFull * 20) / 100)).toFixed(4); // calcola il prezzo scontato del 20% per minorenni senza arrotondare
+
+const priceOverAge = (priceFull - ((priceFull * 40) / 100)).toFixed(4); // calcola il prezzo scontato del 40% per ultrea sessantacinquenni senza arrotondare
 
 console.log(`
 lunghezza viaggio: ${tripKM}
@@ -36,13 +38,15 @@ ticketPrice = Math.round((ticketPrice + Number.EPSILON)*100) / 100; // arrotonda
 
 console.log(`prezzo del biglietto: ${ticketPrice}`);
 
+document.body.style.background = "black url(../img/treno.jpeg) no-repeat center";
+
 document.getElementById('result').outerHTML = `
-  <div class="container text-center my-5 py-5 bg-danger bg-opacity-50 rounded-5">
+  <div class="container text-center my-5 p-5 bg-black bg-opacity-75 rounded-5 text-white">
 
     <h1 class="mb-5">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
 
     <p class="fs-4 fst-italic">
-      Ciao <span class="fw-bold">${userName}</span> in base alla tua età(<span class="fw-bold">${userAge}</span>) e ai km da percorrere(<span class="fw-bold">${tripKM}</span>) il prezzo del tuo biglietto sarà di:
+      Ciao <span class="fw-bold">${userName}</span> in base alla tua età (<span class="fw-bold">${userAge} anni</span>) e ai km da percorrere(<span class="fw-bold">${tripKM} km</span>) il prezzo del tuo biglietto sarà di:
     </p>
 
     <p class="fs-3 fw-bold mb-5">€ ${ticketPrice}*</p>
