@@ -46,7 +46,7 @@ document.getElementById('result').outerHTML = `
     <h1 class="mb-5">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
 
     <p class="fs-4 fst-italic">
-      Ciao <span class="fw-bold">${userName}</span> in base alla tua età (<span class="fw-bold">${userAge} anni</span>) e ai km da percorrere(<span class="fw-bold">${tripKM} km</span>) il prezzo del tuo biglietto sarà di:
+      Ciao <span class="fw-bold">${userName}</span> in base alla tua età (<span class="fw-bold">${userAge} anni</span>) e ai km da percorrere (<span class="fw-bold">${tripKM} km</span>) il prezzo del tuo biglietto sarà di:
     </p>
 
     <p class="fs-3 fw-bold mb-5">€ ${ticketPrice}*</p>
@@ -56,9 +56,9 @@ document.getElementById('result').outerHTML = `
       <p>
         *Il prezzo del biglietto viene calcolato arrotondando alla seconda cifra decimale.
         <ul class="list-unstyled">
-          <li>Il prezzo unitario per km è di €${priceFull}</li>
-          <li>Il prezzo per i minori di 18 anni è di €${priceUnderAge}, calcolato applicando uno sconto del 20% sul prezzo unitario</li>
-          <li>Il prezzo per colore che hanno più di 65 anni è di €${priceOverAge}, calcolato applicando uno sconto del 40% sul prezzo unitario</li>
+          <li>Il prezzo unitario per km è di &euro; ${priceFull}</li>
+          <li>Il prezzo per i minori di 18 anni è di &euro; ${priceUnderAge}, calcolato applicando uno sconto del 20% sul prezzo unitario</li>
+          <li>Il prezzo per colore che hanno più di 65 anni è di &euro; ${priceOverAge}, calcolato applicando uno sconto del 40% sul prezzo unitario</li>
         </ul>        
       </p>
       
