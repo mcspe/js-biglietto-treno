@@ -8,9 +8,9 @@ const priceFull = 0.21; // prezzo unitario per km
 
 //const priceExample = Math.round(0.3654 * 100) / 100; //arrotonda il numero moltiplicato per 100 cosìcche dividendolo in seguito per 100 sarà arrotondato al centesimo
 
-const priceUnderAge = priceFull - ((priceFull * 20) / 100); // calcola il prezzo scontato del 20% per minorenni senza arrotondare
+const priceUnderAge = Math.round(((priceFull - ((priceFull * 20) / 100)) + Number.EPSILON)*100) / 100;// calcola il prezzo scontato del 20% per minorenni senza arrotondare
 
-const priceOverAge = priceFull - ((priceFull * 40) / 100); // calcola il prezzo scontato del 40% per ultrea sessantacinquenni senza arrotondare
+const priceOverAge = Math.round(((priceFull - ((priceFull * 40) / 100)) + Number.EPSILON)*100) / 100; // calcola il prezzo scontato del 40% per ultrea sessantacinquenni senza arrotondare
 
 console.log(`
 lunghezza viaggio: ${tripKM}
